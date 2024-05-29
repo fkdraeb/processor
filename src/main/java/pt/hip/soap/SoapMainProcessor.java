@@ -23,12 +23,12 @@ public class SoapMainProcessor implements Processor {
 
 
         //if (isSoapMessageAccepted) {
-            responseMessage = createGenericResponse("200", "", "1234", "OK");
+            //responseMessage = createGenericResponse("200", "", "1234", "OK");
         /*} else {
             responseMessage = createGenericResponse("400", "", "1234", "NOK");
         }*/
 
-        exchange.getMessage().setBody(responseMessage);
+        exchange.getMessage().setBody(isSoapMessageAccepted);
     }
 
     public static String createGenericResponse(String errorId, String errorMessage, String applicationId, String responseCode) {
