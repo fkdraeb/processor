@@ -1,4 +1,4 @@
-package pt.hip.soap;
+package pt.hip.old.soap;
 
 import ca.uhn.hl7v2.HL7Exception;
 import ca.uhn.hl7v2.model.Message;
@@ -11,7 +11,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@WebService(endpointInterface = "pt.hip.soap.HL7Service")
+//@WebService(endpointInterface = "pt.hip.soap.HL7Service")
 public class HL7ServiceImpl implements HL7Service {
 
     /**

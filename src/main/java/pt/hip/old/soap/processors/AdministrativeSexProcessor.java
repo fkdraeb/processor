@@ -1,8 +1,8 @@
-package pt.hip.soap.processors;
+package pt.hip.old.soap.processors;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
-import pt.hip.soap.HL7ServiceImpl;
+import pt.hip.old.soap.HL7ServiceImpl;
 
 public class AdministrativeSexProcessor implements Processor {
     @Override

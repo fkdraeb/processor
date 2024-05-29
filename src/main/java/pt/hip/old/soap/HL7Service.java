@@ -1,9 +1,9 @@
-package pt.hip.soap;
+package pt.hip.old.soap;
 
 import jakarta.jws.WebService;
 import java.text.ParseException;
 
-@WebService
+//@WebService
 public interface HL7Service {
 
     String getPatientId (String exchange);
