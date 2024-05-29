@@ -17,16 +17,16 @@ public class SoapMainProcessor implements Processor {
     public void process(Exchange exchange) throws Exception {
         String responseMessage = null;
         String exchangeMessage = exchange.getIn().getBody(String.class);
-        boolean isSoapMessageAccepted = new SoapServiceImpl().acceptMessage(exchangeMessage);
+        String isSoapMessageAccepted = new SoapServiceImpl().acceptMessage(exchangeMessage);
 
         //TODO Create all subscription and queue flow
 
 
-        if (isSoapMessageAccepted) {
+        //if (isSoapMessageAccepted) {
             responseMessage = createGenericResponse("200", "", "1234", "OK");
-        } else {
+        /*} else {
             responseMessage = createGenericResponse("400", "", "1234", "NOK");
-        }
+        }*/
 
         exchange.getMessage().setBody(responseMessage);
     }
