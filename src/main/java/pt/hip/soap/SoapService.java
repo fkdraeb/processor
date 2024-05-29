@@ -5,5 +5,5 @@ import jakarta.jws.WebService;
 @WebService
 public interface SoapService {
 
-    boolean acceptMessage (String soapMessage);
+    String acceptMessage (String soapMessage);
 }

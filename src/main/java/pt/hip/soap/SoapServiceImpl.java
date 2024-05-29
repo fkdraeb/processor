@@ -7,10 +7,10 @@ import jakarta.jws.WebService;
 public class SoapServiceImpl implements SoapService {
 
     @Override
-    public boolean acceptMessage(String soapMessage) {
+    public String acceptMessage(String soapMessage) {
         //TODO Here should be created the logic to accept the message
 
-        return true;
+        return "tesssssssssste";
     }
 
 
