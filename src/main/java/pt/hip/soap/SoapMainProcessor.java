@@ -25,7 +25,7 @@ public class SoapMainProcessor implements Processor {
         if (isSoapMessageAccepted) {
             responseMessage = createGenericResponse("200", null, "1234", "OK");
         } else {
-            responseMessage = createGenericResponse("400", null, "1234", "NOK");
+            responseMessage = createGenericResponse("400", "", "1234", "NOK");
         }
 
         exchange.getMessage().setBody(responseMessage);
