@@ -11,6 +11,12 @@ public class SoapMainProcessor implements Processor {
 
         //TODO Create all subscription and queue flow
 
+        //exchange.getMessage().setBody(isSoapMessageAccepted);
+        String customXmlResponse = "<response><message>Custom XML Response</message></response>";
         exchange.getMessage().setBody(isSoapMessageAccepted);
+
+        // Set the custom XML as the response
+        //exchange.getOut().setBody(customXmlResponse);
+        exchange.getMessage().setHeader(Exchange.CONTENT_TYPE, "application/xml");
     }
 }
