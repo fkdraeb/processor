@@ -13,7 +13,7 @@ public class SoapMainProcessor implements Processor {
 
         //exchange.getMessage().setBody(isSoapMessageAccepted);
         String customXmlResponse = "<response><message>Custom XML Response</message></response>";
-        exchange.getMessage().setBody(isSoapMessageAccepted);
+        exchange.getMessage().setBody(customXmlResponse);
 
         // Set the custom XML as the response
         //exchange.getOut().setBody(customXmlResponse);
