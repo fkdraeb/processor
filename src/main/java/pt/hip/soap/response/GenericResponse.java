@@ -2,7 +2,9 @@ package pt.hip.soap.response;
 
 
 import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlType;
 
+@XmlType (propOrder = { "error", "response", "search", "applicationID" })
 public class GenericResponse {
     private ErrorResponse errorResponse;
     private String response;
