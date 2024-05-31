@@ -7,7 +7,13 @@ public class SoapServiceImpl implements SoapService {
 
     @Override
     public String acceptMessage(String soapMessage) {
-        //TODO Here should be created the logic to accept the message
+
+        /**TODO Here should be created the logic to create a new event
+         * Should validate the fields on the message
+         * Should validate the subscription is ative
+         * More ...
+         * Should return is the event was created succefully, if not should be in the response info
+         */
 
 
 
