@@ -22,7 +22,7 @@ public class SoapProcessor implements Processor {
         String exchangeMessage = exchange.getIn().getBody(String.class);
 
         //TODO Create all subscription and queue flow
-        //String isSoapMessageAccepted = new SoapServiceImpl().acceptMessage(exchangeMessage);
+        String isSoapMessageAccepted = new SoapServiceImpl().acceptMessage(exchangeMessage);
 
         error.setErrorID("N/A");
         error.setErrorMessage("N/A");
