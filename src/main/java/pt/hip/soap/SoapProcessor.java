@@ -11,7 +11,7 @@ import pt.hip.soap.response.Response;
 
 import java.io.StringWriter;
 
-public class SoapMainProcessor implements Processor {
+public class SoapProcessor implements Processor {
     @Override
     public void process(Exchange exchange) throws Exception {
 
