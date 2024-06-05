@@ -24,6 +24,8 @@ public class SoapServiceImpl implements SoapService {
          * Should return is the event was created successfully, if not should be in the response info
          */
 
+
+
         try {
             saveMessageToDatabase(soapMessage);
         } catch (SQLException e) {
