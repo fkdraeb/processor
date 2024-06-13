@@ -22,6 +22,8 @@ public class PatientJsonBuilder implements Processor {
         String patientId = qpdSegment.getQpd3_UserParametersInsuccessivefields().encode().replaceAll(".*\\^", "");
         patientJson.addProperty("patientId",patientId);
 
+        exchange.getIn().setHeader("originalMshId", mshSegment.getMsh10_MessageControlID().getValue());
+
         exchange.getIn().setBody(patientJson.toString());
     }
 
