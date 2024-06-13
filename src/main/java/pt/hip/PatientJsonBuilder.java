@@ -22,7 +22,7 @@ public class PatientJsonBuilder implements Processor {
         String patientId = qpdSegment.getQpd3_UserParametersInsuccessivefields().encode().replaceAll(".*\\^", "");
         patientJson.addProperty("patientId",patientId);
 
-        exchange.getIn().setBody(patientJson);
+        exchange.getIn().setBody(patientJson.toString());
     }
 
     public static Message hl7ParserFromString(String exchangeBody) throws HL7Exception {
