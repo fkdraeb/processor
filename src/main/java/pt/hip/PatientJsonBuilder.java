@@ -4,10 +4,10 @@ import ca.uhn.hl7v2.HL7Exception;
 import ca.uhn.hl7v2.model.v25.segment.MSH;
 import ca.uhn.hl7v2.model.v25.segment.QPD;
 import ca.uhn.hl7v2.parser.PipeParser;
+import com.google.gson.JsonObject;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import ca.uhn.hl7v2.model.Message;
-import org.apache.camel.util.json.JsonObject;
 
 public class PatientJsonBuilder implements Processor {
     @Override
@@ -20,7 +20,7 @@ public class PatientJsonBuilder implements Processor {
         QPD qpdSegment = (QPD) originMessage.get("QPD");
 
         String patientId = qpdSegment.getQpd3_UserParametersInsuccessivefields().encode().replaceAll(".*\\^", "");
-        patientJson.put("patientId",patientId);
+        patientJson.addProperty("patientId",patientId);
 
         exchange.getIn().setBody(patientJson);
     }
