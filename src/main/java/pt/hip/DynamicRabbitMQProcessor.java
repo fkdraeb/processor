@@ -1,4 +1,4 @@
-package pt.hip.soap;
+package pt.hip;
 
 import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.Channel;
