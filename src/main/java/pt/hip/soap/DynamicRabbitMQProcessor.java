@@ -16,7 +16,7 @@ public class DynamicRabbitMQProcessor implements Processor {
         String bindingName = exchange.getMessage().getHeader("binding_name").toString();
 
         ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("localhost");
+        factory.setHost("production-rabbitmqcluster-nodes");
         factory.setPort(5672);
         factory.setUsername("guest");
         factory.setPassword("guest");
