@@ -88,8 +88,39 @@
             <version>2.11.0</version>
         </dependency>
 
-
+        <dependency>
+            <groupId>com.rabbitmq</groupId>
+            <artifactId>amqp-client</artifactId>
+            <version>5.21.0</version>
+        </dependency>
 
     </dependencies>
+    <repositories>
+        <repository>
+            <id>maven_central</id>
+            <name>Maven Central</name>
+            <url>https://repo.maven.apache.org/maven2/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>hip-snapshots</id>
+            <url>https://nexus.spms.min-saude.pt/repository/hip-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <!-- <repositories>
+        <repository>
+            <id>hip-snapshots</id>
+            <url>https://nexus.spms.min-saude.pt/repository/hip-snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+    </repositories>  -->
 
 </project>
