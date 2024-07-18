@@ -29,9 +29,15 @@ public class DynamicRabbitMQProcessor implements Processor {
 
         String queueName = exchange.getMessage().getHeader("queue_name").toString();
         String bindingName = exchange.getMessage().getHeader("binding_name").toString();
+        String exchangeName = exchange.getMessage().getHeader("exchange_name").toString();
+        String logQueue = exchange.getMessage().getHeader("log_queue_name").toString();
 
-        AMQP.Queue.DeclareOk declareOk = channel.queueDeclare(queueName, true, false, false, null);
-        channel.queueBind(queueName, "amq.direct", bindingName);
-        channel.exchangeDeclare("hip.tcp",BuiltinExchangeType.FANOUT.getType(), true);
+
+        //AMQP.Queue.DeclareOk declareOk =
+        channel.exchangeDeclare(exchangeName, BuiltinExchangeType.FANOUT.getType(), true);
+        channel.queueDeclare(queueName, true, false, false, null);
+        channel.queueBind(queueName, exchangeName, bindingName);
+        channel.queueBind(logQueue, exchangeName, logQueue + "_rk");
+
     }
 }
