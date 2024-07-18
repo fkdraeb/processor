@@ -36,6 +36,7 @@ public class DynamicRabbitMQProcessor implements Processor {
         //AMQP.Queue.DeclareOk declareOk =
         channel.exchangeDeclare(exchangeName, BuiltinExchangeType.FANOUT.getType(), true);
         channel.queueDeclare(queueName, true, false, false, null);
+        channel.queueDeclare(logQueue, true, false, false, null);
         channel.queueBind(queueName, exchangeName, bindingName);
         channel.queueBind(logQueue, exchangeName, logQueue + "_rk");
 
