@@ -11,18 +11,24 @@ import com.rabbitmq.client.*;
 
 public class DynamicRabbitMQProcessor implements Processor {
 
-    @Inject
+    /*@Inject
     RabbitMQClient rabbitMQClient;
-    private Channel channel;
+    private Channel channel;*/
 
     @Override
     public void process(Exchange exchange) throws Exception {
 
+        ConnectionFactory factory = new ConnectionFactory();
+        factory.setHost("production-rabbitmqcluster-nodes");
+        factory.setPort(5672);
+        factory.setUsername("guest");
+        factory.setPassword("guest");
+
+        Connection connection = factory.newConnection();
+        Channel channel = connection.createChannel();
+
         String queueName = exchange.getMessage().getHeader("queue_name").toString();
         String bindingName = exchange.getMessage().getHeader("binding_name").toString();
-
-        Connection connection = rabbitMQClient.connect();
-        channel = connection.createChannel();
 
         AMQP.Queue.DeclareOk declareOk = channel.queueDeclare(queueName, true, false, false, null);
         channel.queueBind(queueName, "amq.direct", bindingName);
